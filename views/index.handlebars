@@ -1,0 +1,38 @@
+<h1>How Many Burgers Have You Consumed?</h1>
+
+<h2>Burgers Awaiting Consumption</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#unless devoured}}
+  <li>
+    {{burger_name}}
+
+    <button class="burger-list" data-id="{{id}}">Eated</button>
+  </li>
+  {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers that have Fulfilled Their Life Long Goal of Being Consumed</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  <li>
+    {{burger_name}}
+  </li>
+  {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
